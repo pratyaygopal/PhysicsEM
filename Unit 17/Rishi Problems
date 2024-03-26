@@ -1,0 +1,81 @@
+import numpy as np
+
+# Rotating Triangle in a Magnetic Field
+print("Answers for Rotating Triangle in a Magnetic Field:")
+# Put all your constants in here
+b = 0.25           # Base of triangle (m)
+h = 0.66           # Height of triangle (m)
+R = 1.1            # Resistance (Ohm)
+t_rotation = 1.5   # Time for one rotation (s)
+B = 1.8            # Magnetic Field (T)
+t1 = 0.5625        # Time t1 given in problem 3
+
+
+# Problem 1
+w = (2*np.pi) / t_rotation
+print("Problem 1:", w)
+
+# Problem 2
+N = 1
+A = 0.5 * b * h
+EMF_ind = N * B * A * w
+I_ind = EMF_ind / R
+print("Problem 2:", I_ind)
+
+# Problem 3
+theta = w * t1
+flux = N * B * A * np.cos(theta)
+print("Problem 3:", flux, "If negative, make positive to get magnitude")
+
+# Problem 4
+emf = N * B * A * w * np.sin(w * t1)
+I1 = emf / R
+print("Problem 4:", I1)
+
+# Problem 5
+print("Problem 5: Φo = 0 and Io = Imax")
+
+# Problem 6
+print("Problem 6: Φmax remains the same and Imax doubles")
+
+
+# Conducting Loop and Current-Carrying Wire
+print()
+print("Answers for Conducting Loop and Current-Carrying Wire:")
+# Put your constants for problems 1 and 2 in here
+# Constants for Problem 3 will be under Problem 3
+I1 = 4.1    # Current of infinite wire (A)
+d = 0.56    # Distance away from infinite wire (m)
+v = 0.12    # Velocity of wire (m/s)
+w = 0.27    # Length of wire (m)
+t1 = 3.1    # Time t1 given in problem 2
+
+# Problem 1
+u0 = 4 * np.pi * 10**-7
+B = (u0 * I1) / (2 * np.pi * d)
+emf_ind_0 = B * w * v
+print("Problem 1:", emf_ind_0)
+
+# Problem 2
+d1 = d - (v * t1)
+B1 = (u0 * I1) / (2 * np.pi * d1)
+emf_ind_t1 = B1 * w * v
+print("Problem 2:", emf_ind_t1)
+
+# Problem 3
+l = 0.59    # Length of rectangle (m)
+w = 0.27    # Width of rectangle (m)
+v = 0.12    # Velocity of rectangle (m/s)
+d = 0.56    # Distance away from infinite wire (m)
+R = 1.1     # Resistance of loop (Ohm)
+emf_ind = ((u0 * I1 * w) / (2 * np.pi)) * ((v * l) / (d * (d + l)))
+I_ind = emf_ind / R
+print("Problem 3:", I_ind, "Could be either sign")
+
+# Problem 4
+print("Problem 4: There is no induced current now")
+
+#Problem 5
+emf_ind_2 = ((u0 * w) / (2 * np.pi)) * ((v * w) / (d * (d + w)))
+I2 = emf_ind / emf_ind_2
+print("Problem 5:", I2)
