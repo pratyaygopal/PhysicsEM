@@ -1,5 +1,10 @@
 #this is for the question:AC Circuit 1
 import numpy as np
+w = 855
+emax = 120
+R = 71
+C = 12*10**-6
+L = 72.5*10**-3
 #calculate the impedance of the inductor and the capacitor
 xL = w*L
 xC = 1 / (w*C)
@@ -21,7 +26,7 @@ print(Im)
 xtot = xL - xC
 print(xtot, "this is meant to see if the current is dragging by its balls or leading with its dick, its not an answer")
 degree1 = np.arctan(xtot / R)
-degree = np.rad2deg(-degree1)
+degree = np.rad2deg(-degree1)   
 rad1 = np.rad2deg(degree)
 print(degree)
 #part 4
@@ -30,7 +35,7 @@ print(degree)
 #this is what you would think but this is a lie
 #remember, the voltage across the inductor is L*di/dt. But di/dt is defined by sin(wt-phi) 
 #we calculated a phase angle of 28. something
-w1 = w*(180/pi)
+w1 = w*(180/np.pi)
 t = (90 - degree) / w1
 print(t)
 #for whatever reason you dont calculate anything using radians. idk why
