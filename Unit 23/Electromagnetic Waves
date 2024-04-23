@@ -1,0 +1,25 @@
+# Answers for Electromagnetic Waves
+import numpy as np
+
+wavelength = 486 * 10**-9  #nm
+B1 = 10.8 * 10**-6  #T
+c = 3 * 10**8  #Speed of Light
+
+k = 2*np.pi / wavelength
+print(k)
+
+Zmax = (np.pi/2) / k
+print(Zmax * 10**9)
+
+E1 = c * np.sqrt(2 * B1**2)
+print(E1)
+
+Emax = E1 * np.sin(np.pi/4)
+print(np.round(Emax))
+
+print("Emax/sqrt2 * sin(kz - wt) (i - j)")
+
+tmax = wavelength / 4*c
+print(tmax)
+
+print("Ex1 = Ex2")
