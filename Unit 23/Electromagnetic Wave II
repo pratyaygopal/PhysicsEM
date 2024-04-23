@@ -1,0 +1,26 @@
+# Answers for Electromagnetic Wave II
+import numpy as np
+
+wavelength = 3.1 * 10**-2  #cm
+Bx = 3.5 * 10**-6  #T
+By = 4.2 * 10**-6  #T
+c = 3*10**8  #Speed of Light
+Z0 = 377  #Constant for intensity
+u0 = 4*np.pi*10**-7  #Constant
+e0 = 8.85*10**-12  #Constant
+
+f = c/wavelength
+print(f * 10**-9)
+
+Bmax = np.sqrt(Bx**2 + By**2)
+Emax = Bmax * c
+I = (Emax**2)/(2*Z0)
+print(I)
+
+Sz = c * e0 * (Bmax * c)**2
+print(Sz)
+
+Ex = c*By
+print(Ex)
+
+print("SIIz > 0 and magnitude(SIIz) = magnitude(Sz)")
