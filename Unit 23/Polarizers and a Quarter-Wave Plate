@@ -1,0 +1,20 @@
+# Answers for Polarizers and a Quarter-Wave Plate
+import numpy as np
+
+I0 = 475  #W/m^2
+theta1 = np.deg2rad(77)  #degrees
+
+Imid = I0/2
+print(Imid)
+
+Ifinal = Imid * (np.cos(theta1)**2)
+print(Ifinal)
+
+Eyfinal = np.sin(theta1) * np.sqrt(Ifinal/I0)
+print(Eyfinal)
+
+Ifinalnew = I0 * (np.cos(np.pi/2 - theta1)**2) * (np.cos(theta1 - 0)**2)
+print(Ifinalnew)
+
+print("Left Circularly Polarized")
+print("Two")
