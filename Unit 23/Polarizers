@@ -4,10 +4,6 @@ import numpy as np
 I0 = 301  #W/m^2
 theta2 = np.deg2rad(79)  #degrees
 theta3 = np.deg2rad(28)  #degrees
-c = 3*10**8  #Speed of Light
-Z0 = 377  #Constant for intensity
-u0 = 4*np.pi*10**-7  #Constant
-e0 = 8.85*10**-12  #Constant
 
 I1 = 0.5*I0
 I2 = I1*(np.cos(np.pi/2 - theta2)**2)
