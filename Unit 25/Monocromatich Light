@@ -1,0 +1,27 @@
+import numpy as np
+phi1 = np.deg2rad(42)
+h = 0.18
+d = 0.478
+
+x = d - h/np.tan(np.deg2rad(30))
+phi2 = np.arctan(h/x)
+print(np.rad2deg(phi2))
+
+i = 90-30-np.rad2deg(phi1)
+theta = 90-30-np.rad2deg(phi2)
+n = np.sin(np.deg2rad(i))/np.sin(np.deg2rad(theta))
+print(n)
+
+i2 = 90-np.rad2deg(phi2)
+theta2 = np.arcsin(n*np.sin(np.deg2rad(i2)))
+phi3 = 90-np.rad2deg(theta2)
+print(phi3)
+
+phi2_prime = 90-np.rad2deg(np.arcsin(1/n))
+var = 90-30-phi2_prime
+i3 = np.arcsin(n*np.sin(np.deg2rad(var)))
+phi1_max = 90-30-np.rad2deg(i3)
+print(phi1_max)
+print("d_violet < d")
+theta_v = np.arcsin(n/2)
+print(np.rad2deg(theta_v))
